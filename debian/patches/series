@@ -1,0 +1,11 @@
+0001-add-vendor-command-policy-Fix-for-kernel-5.3-Fetch-f.patch
+0002-Fix-build-with-linux-5.10.0.patch
+0003-report-48M-not-46.5M.patch
+0004-report-correct-band.patch
+0005-no-retries-when-retry-false.patch
+0006-FCS-bit.patch
+0007-avoid-freeze-when-unplugging-adapter.patch
+0008-fix-connection-error-on-resume.patch
+0009-Add-support-for-TOTOLINK-A650UA-v3.patch
+0010-Remove-unneeded-debug-output.patch
+0011-Makefile-Disable-debug-output.patch

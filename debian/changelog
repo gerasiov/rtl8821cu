@@ -1,0 +1,5 @@
+rtl8821cu (5.8.1.7-1) unstable; urgency=medium
+
+  * Initial release (Closes: #982741).
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Sat, 13 Feb 2021 23:23:23 +0300

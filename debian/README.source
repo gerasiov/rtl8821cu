@@ -1,0 +1,11 @@
+Realtek does not provide the driver on its website, so we use one from
+toolchains/bsp published on github.
+
+
+Sources for the driver itself and some patches:
+
+https://github.com/morrownr/8821cu
+https://github.com/brektrou/rtl8821CU
+https://github.com/axiomware/RTL8821CU_driver_v5.8.1
+https://github.com/oe-alliance/oe-alliance-core/tree/4.4/meta-oe/recipes-connectivity/realtek/rt8821cu
+https://github.com/aircrack-ng/rtl8812au

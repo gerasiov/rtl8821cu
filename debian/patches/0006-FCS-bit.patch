@@ -1,0 +1,26 @@
+From: cail <jeff@forristal.com>
+Date: Mon, 28 Dec 2020 16:14:37 +0000
+Subject: FCS bit
+
+---
+ core/rtw_recv.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/core/rtw_recv.c b/core/rtw_recv.c
+index a874c83..cc7b440 100644
+--- a/core/rtw_recv.c
++++ b/core/rtw_recv.c
+@@ -3927,9 +3927,10 @@ static sint fill_radiotap_hdr(_adapter *padapter, union recv_frame *precvframe,
+ 	if (pattrib->mfrag)
+ 		hdr_buf[rt_len] |= IEEE80211_RADIOTAP_F_FRAG;
+ 
+-	/* always append FCS */
+-	hdr_buf[rt_len] |= IEEE80211_RADIOTAP_F_FCS;
+-
++#ifdef CONFIG_RX_PACKET_APPEND_FCS
++	if (rtw_hal_rcr_check(padapter, BIT_APP_FCS_8821C))
++		hdr_buf[rt_len] |= IEEE80211_RADIOTAP_F_FCS;
++#endif
+ 
+ 	if (0)
+ 		hdr_buf[rt_len] |= IEEE80211_RADIOTAP_F_DATAPAD;
