@@ -1,3 +1,9 @@
+rtl8821cu (5.8.1.7-2) unstable; urgency=medium
+
+  * Add 0012-Do-not-override-KVER-provided-by-dkms.patch
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Sun, 24 Oct 2021 19:20:11 +0300
+
 rtl8821cu (5.8.1.7-1) unstable; urgency=medium
 
   * Initial release (Closes: #982741).
