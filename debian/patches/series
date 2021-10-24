@@ -9,3 +9,4 @@
 0009-Add-support-for-TOTOLINK-A650UA-v3.patch
 0010-Remove-unneeded-debug-output.patch
 0011-Makefile-Disable-debug-output.patch
+0012-Do-not-override-KVER-provided-by-dkms.patch
