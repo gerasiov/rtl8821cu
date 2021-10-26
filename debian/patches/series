@@ -10,3 +10,4 @@
 0010-Remove-unneeded-debug-output.patch
 0011-Makefile-Disable-debug-output.patch
 0012-Do-not-override-KVER-provided-by-dkms.patch
+0013-Kernel-5.12-support.patch

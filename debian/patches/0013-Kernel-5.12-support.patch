@@ -1,0 +1,27 @@
+From: Alexander Gerasiov <a@gerasiov.net>
+Date: Tue, 26 Oct 2021 12:36:58 +0300
+Subject: Kernel 5.12 support.
+
+Signed-off-by: Alexander Gerasiov <a@gerasiov.net>
+---
+ os_dep/linux/recv_linux.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/os_dep/linux/recv_linux.c b/os_dep/linux/recv_linux.c
+index 33a9390..c7810a5 100644
+--- a/os_dep/linux/recv_linux.c
++++ b/os_dep/linux/recv_linux.c
+@@ -360,8 +360,13 @@ static int napi_recv(_adapter *padapter, int budget)
+ 			So, we should prevent cloned SKB go into napi_gro_receive.
+ 		*/
+ 		if (pregistrypriv->en_gro && !skb_cloned(pskb)) {
++#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 12, 0))
+ 			if (rtw_napi_gro_receive(&padapter->napi, pskb) != GRO_DROP)
+ 				rx_ok = _TRUE;
++#else
++			rtw_napi_gro_receive(&padapter->napi, pskb);
++			rx_ok = _TRUE;
++#endif
+ 			goto next;
+ 		}
+ #endif /* CONFIG_RTW_GRO */
