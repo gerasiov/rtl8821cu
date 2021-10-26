@@ -1,0 +1,26 @@
+From: Alexander Gerasiov <a@gerasiov.net>
+Date: Tue, 26 Oct 2021 13:04:33 +0300
+Subject: Add kernel 5.11 support.
+
+Signed-off-by: Alexander Gerasiov <a@gerasiov.net>
+---
+ os_dep/linux/ioctl_cfg80211.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/os_dep/linux/ioctl_cfg80211.c b/os_dep/linux/ioctl_cfg80211.c
+index 2fdf0b9..a44c90c 100644
+--- a/os_dep/linux/ioctl_cfg80211.c
++++ b/os_dep/linux/ioctl_cfg80211.c
+@@ -440,7 +440,11 @@ u8 rtw_cfg80211_ch_switch_notify(_adapter *adapter, u8 ch, u8 bw, u8 offset,
+ 
+ #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 19, 0))
+ 	if (started) {
+-		cfg80211_ch_switch_started_notify(adapter->pnetdev, &chdef, 0);
++		cfg80211_ch_switch_started_notify(adapter->pnetdev, &chdef, 0
++#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0))
++				, false
++#endif
++				);
+ 		goto exit;
+ 	}
+ #endif

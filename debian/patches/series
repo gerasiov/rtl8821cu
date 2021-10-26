@@ -11,3 +11,4 @@
 0011-Makefile-Disable-debug-output.patch
 0012-Do-not-override-KVER-provided-by-dkms.patch
 0013-Kernel-5.12-support.patch
+0014-Add-kernel-5.11-support.patch
